@@ -63,3 +63,5 @@ typings/
 # next.js build output
 .next
 
+# 參考資料夾不需要頻繁 commit
+_original-jest/  # 可選:若要保留在 git 則註解此行
