@@ -2,8 +2,9 @@ import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   test: {
-    globals: true,           // 啟用全域 API (describe, it, expect)
-    environment: 'jsdom',    // 支援 DOM 測試
-    setupFiles: [],          // 測試前執行的檔案
+    globals: true,
+    environment: 'jsdom',
+    include: ['**/*.test.{js,ts}'],     // 只執行 .test.js
+    exclude: ['**/*.spec.{js,ts}'],     // 排除 .spec.js
   },
 })
