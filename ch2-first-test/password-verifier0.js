@@ -1,3 +1,4 @@
+// password-verifier0.js
 export const verifyPassword = (input, rules) => {
   const errors = [];
   rules.forEach(rule => {
