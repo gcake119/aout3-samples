@@ -15,5 +15,17 @@ describe("Password Verifier", () => {
       // 檢查退出點
       expect(errors[0]).toMatch("fake reason");
     });
+
+    // 在同一個退出點檢查額外的最終結果，解決斷言輪盤問題
+    it("has exactly one error message", () => {
+      // 設定測試的輸入
+      const verifier = new PasswordVerifier1();
+      const fakeRule = (input) => ({ passed: false, reason: "fake reason" });
+      // 用輸入來呼叫進入點
+      verifier.addRule(fakeRule);
+      const errors = verifier.verify("any value");
+      // 檢查退出點
+      expect(errors.length).toBe(1);
+    });
   });
 });
