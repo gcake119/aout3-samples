@@ -1,5 +1,5 @@
 // password-verifier1.js
-class PasswordVerifier1 {
+export class PasswordVerifier1 {
   constructor () {
     this.rules = [];
   }
@@ -22,5 +22,3 @@ class PasswordVerifier1 {
     return errors;
   }
 }
-
-module.exports = { PasswordVerifier1 };
